@@ -9,14 +9,15 @@
             :show-pokemon="showPokemon" 
         />
 
-        <PokemonOptions 
+        <PokemonOptions
+            v-if="!showAnswer"
             :pokemons="pokemonArr"
             @selection-pokemon="checkAnswer"
         />
 
         <template v-if="showAnswer">
             <h2 class="fade-in">{{ message }}</h2>
-            <button @click="newGame">
+            <button @click="newGame" class="custom-btn">
                 Nuevo Juego
             </button>
         </template>
@@ -51,9 +52,6 @@ export default {
             this.pokemon = this.pokemonArr[ rndInt ]
         },
         checkAnswer( selectedId ) {
-
-            console.log('Pokemon ID:', this.pokemon.id);
-            console.log('Selected ID:', selectedId);
             
             this.showPokemon = true
             this.showAnswer  = true
@@ -80,3 +78,25 @@ export default {
 
 }
 </script>
+
+<style scoped>
+
+.custom-btn {
+    background-color: #ff6363;
+    border-radius: 8px;
+    border: 1px solid #ff1a1a;
+    color: white;
+    cursor: pointer;
+    padding: 15px;
+    text-align: center;
+    width: 200px;
+    max-width: 250px;
+    transition: background-color 0.3s;
+    box-sizing: border-box;
+}
+
+.custom-btn:hover {
+  background-color: #ff1a1a;
+}
+
+</style>

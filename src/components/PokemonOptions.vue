@@ -18,33 +18,46 @@ export default {
       required: true
     }
   },
-  methods: {
-    hola(){
-      // this.$emit()
-    }
-  }
 }
 </script>
 
 <style scoped>
 ul {
-    list-style-type: none;
+  list-style-type: none;
+  padding: 0;
 }
+
 li {
-    background-color: white;
-    border-radius: 5px;
-    border: 1px solid rgba(0, 0, 0, 0.2);
-    cursor: pointer;
-    margin-bottom: 10px;
-    width: 250px;
+  background-color: #ff6363;
+  border-radius: 8px;
+  border: 1px solid #ff1a1a;
+  color: white;
+  cursor: pointer;
+  margin-bottom: 10px;
+  padding: 25px;
+  text-align: center;
+  width: 200px;
+  max-width: 200px;
+  transition: background-color 0.3s;
+  box-sizing: border-box;
 }
 
 li:hover {
-    background-color: rgba(0, 0, 0, 0.05);
+  background-color: #ff1a1a;
+}
+
+@media screen and (min-width: 768px) {
+  li {
+    width: 46%;
+    display: inline-block;
+    margin-right: 4%;
+  }
 }
 
 .options-container {
-    display: flex;
-    justify-content: center;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-top: 20px;
 }
 </style>
