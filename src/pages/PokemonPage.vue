@@ -51,6 +51,10 @@ export default {
             this.pokemon = this.pokemonArr[ rndInt ]
         },
         checkAnswer( selectedId ) {
+
+            console.log('Pokemon ID:', this.pokemon.id);
+            console.log('Selected ID:', selectedId);
+            
             this.showPokemon = true
             this.showAnswer  = true
 
